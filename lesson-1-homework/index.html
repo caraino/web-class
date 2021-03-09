@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson1</title>
+    <style>
+        tr {
+            height: 100px;
+            text-align: center;
+            font-size: 25px;
+        }
+        
+        select,
+        .text {
+            height: 30px;
+            width: 180px;
+            font-size: 20px;
+        }
+        
+        .text {
+            height: 24px;
+        }
+        
+        .submit {
+            height: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="300" align="center">
+        <tr>
+            <td><label for="Fruit1">Fruit:</label></td>
+            <td><input type="text" name="Fruit1" id="Fruit1" class="text" /></td>
+            <td><input type="submit" value="Submit" class="submit" /></td>
+        </tr>
+        <tr>
+            <td>Fruit:</td>
+            <td>
+                <select>
+                    <!-- 使载入时select默认为空白 -->
+                    <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                    <option>Banana</option>
+                    <option>Cherry</option>
+                    <option>Apple</option>
+                    <option>Strawberry</option>
+                    <option>Lemon</option>
+                    <option>Orange</option>
+                </select>
+            </td>
+            <td><input type="submit" value="Submit" class="submit" /></td>
+        </tr>
+    </table>
+</body>
+
+</html>
