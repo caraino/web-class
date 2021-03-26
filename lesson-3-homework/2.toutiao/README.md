@@ -1,3 +1,5 @@
 js/server.js中不知道为什么不能用require引入express，就没有使用Ajax追加展示新闻，用python爬取了10条新闻存入数组，每次页面滚动到下方时自动添加这10条新闻
+
 时间相对实现利用behot_time和现在时间戳的相对值
+
 追加新闻展示用的是模板引擎写在index.html后面
