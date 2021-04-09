@@ -10,21 +10,22 @@ $(function() {
         }
 
         // 是否请求新的新闻
-        if ($(window).scrollTop() + $(window).height() >= $(document).height() - 200) {
-            // $.ajax({
-            //     url: 'https://127.0.0.1:8080/server',
-            //     type: 'get',
-            //     dataType: 'jsonp',
-            //     success: function(res) { //result结果
-            //         var html = template('tpl', res);
-            //         $('.news-list').append('<div class="more-news"></div>');
-            //         $('.more-news').html(html);
-            //     }
-
-            // })
-            var html = template('tpl', { data });
+        if ($(window).scrollTop() + $(window).height() >= $(document).height() - 400) {
             $('.news-list').append('<div class="more-news"></div>');
-            $('.more-news').html(html);
+
+            $.ajax({
+                url: 'http://127.0.0.1:8080/server',
+                type: 'get',
+                dataType: 'json',
+                success: function(data) { //result结果
+                    var html = template('tpl', { data });
+                    // $('.news-list').append('<div class="more-news"></div>');
+                    $('.more-news').html(html);
+                }
+
+            })
+
+
 
         }
     });
@@ -32,4 +33,25 @@ $(function() {
     $(".channel").on("mouseenter mouseleave", function() {
         $(this).toggleClass("current");
     });
+
+    function DateDiff(startTime) {
+        var date = (new Date()).valueOf() / 1000;
+        var timeDiff = date - startTime
+        if (Math.floor(timeDiff / 86400 / 365) >= 1) {
+            return Math.floor(timeDiff / 86400 / 365) + "年前";
+        } else if (Math.floor(timeDiff / 86400 / 30) >= 1) {
+            return Math.floor(timeDiff / 86400 / 30) + "月前";
+        } else if (Math.floor(timeDiff / 86400) >= 1) {
+            return Math.floor(timeDiff / 86400) + "天前";
+        } else if (Math.floor(timeDiff / 3600) >= 1) {
+            return Math.floor(timeDiff / 3600) + "小时前";
+        } else if (Math.floor(timeDiff / 60) >= 1) {
+            return Math.floor(timeDiff / 60) + "分钟前";
+        } else {
+            return "刚刚";
+        }
+
+    }
+
+    template.defaults.imports.DateDiff = DateDiff;
 })
