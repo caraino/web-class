@@ -1,0 +1,82 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    color: rgb(9 76 158);
+    font-size: 1.125em;
+    background-color: #f4f3f2;
+    align-items: center;
+}
+
+.song {
+    flex: .8 1 0;
+    display: flex;
+    align-items: center;
+}
+
+.progress {
+    flex: 1.2 1 0;
+    height: 5px;
+    border: 0.5px solid #aaa;
+    border-radius: 5px;
+}
+
+.nowProgress {
+    height: 5px;
+    background-color: rgba(122, 168, 188, .5);
+    border-radius: 5px;
+}
+
+.fa-step-backward::before {
+    content: "\ea23";
+}
+
+.fa-play::before {
+    content: "\ea1c";
+}
+
+.fa-pause::before {
+    content: "\ea1d";
+}
+
+.fa-step-forward::before {
+    content: "\ea24";
+}
+
+.fa-repeat::before {
+    content: "\ea2d";
+}
+
+.fa-like::before {
+    content: "\e9da";
+}
+
+.select {
+    color: red;
+}
+
+.song img {
+    height: 65px;
+    width: 65px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.info {
+    padding: 10px;
+}
+
+.info p {
+    padding: 5px 0;
+    color: #000;
+    font-size: 0.8em;
+}
+
+.controls {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -7,7 +7,7 @@ First, run the development server:
 ```bash
 npm start
 ```
-
+components需要放在pages外面
 首屏如下
 
 ![image-20210416142051842](C:\Users\xiao yuqin\AppData\Roaming\Typora\typora-user-images\image-20210416142051842.png)

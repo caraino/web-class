@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
-import Header from './components/Header'
-import Left from './components/Left'
-import Main from './components/Main'
-import Right from "./components/Right";
+import React from "react"
+import Header from '../components/Header'
+import Left from '../components/Left'
+import Main from '../components/Main'
+import Right from "../components/Right";
 
 
 

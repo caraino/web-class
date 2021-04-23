@@ -59,7 +59,7 @@ export default class app extends Component {
     
 
 	touchMove (e) {
-		// e.preventDefault()
+		e.preventDefault()
 		this.pausePlay();
 
         var w=this.props.size+'px';
