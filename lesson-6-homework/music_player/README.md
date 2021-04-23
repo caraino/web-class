@@ -16,11 +16,11 @@ You will also see any lint errors in the console.
 
 移动端页面：
 
-![mobile_show](/mobile_show.png)
+![mobile_show](./mobile_show.png)
 
 web页面：
 
-![web_show](/web_show.png)
+![web_show](./web_show.png)
 
 实现以下功能：
 
