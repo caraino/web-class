@@ -2,12 +2,15 @@ import React, { useEffect, useState} from 'react'
 
 export default function Main() {
     const [list, setList] = useState([]);
-    
-    useEffect(() => {
+    function getNews() {
         fetch("/api/news").then(async (res) => {
             const resp = await res.json();
-            setList( resp.data);
+            setList( l=>[...l,...resp.data]);
         });
+    }
+    
+    useEffect(() => {
+        getNews()
     }, []);
 
     function DateDiff(startTime) {
@@ -29,39 +32,43 @@ export default function Main() {
 
     }
 
-    // const mainRef=useRef();
-    // console.log(mainRef.current)
-
-    const [scrollPosition, setScrollPosition] = useState({});
 
 
     useEffect(() => {
         
         const handler = () => {
-          setScrollPosition({
-            scrollH: document.documentElement.scrollHeight, 
-            clientH: document.documentElement.clientHeight,
-            scrollT: document.documentElement.scrollTop,
-          });
+          let scrollH=document.documentElement.scrollHeight, 
+              clientH= document.documentElement.clientHeight,
+              scrollT=document.documentElement.scrollTop;
+          console.log(scrollH-clientH-scrollT)
+          if(scrollH-clientH<=scrollT+400) {
+            getNews();   
+          }
         };
 
-        window.addEventListener('scroll', handler, { passive: true });
+        window.addEventListener('scroll',throttle(handler,500), { passive: true });
 
         return () => {
-          window.removeEventListener('scroll', handler);
+          window.removeEventListener('scroll', throttle(handler,500));
         };
     }, []);
 
-    // console.log(scrollPosition.scrollH-scrollPosition.clientH-scrollPosition.scrollT)
 
-    if(scrollPosition.scrollH-scrollPosition.clientH<=scrollPosition.scrollT+400) {
-        fetch("/api/news").then(async (res) => {
-            const resp = await res.json();
-            setList(l=>[...l,...resp.data]);
-        });
-    }
-    
-    // console.log(list)
+    // 简单的节流函数
+    var throttle = function(func, delay) {            
+        var timer = null;            
+        return function() {                
+            var context = this;               
+            var args = arguments;                
+            if (!timer) {                    
+                timer = setTimeout(function() {                        
+                    func.apply(context, args);                        
+                    timer = null;                    
+                }, delay);                
+            }            
+        }        
+    }    
+
 
     return (
         <>

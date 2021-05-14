@@ -1,0 +1,80 @@
+.recommend {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 2vw;
+    background: #f2f2f2;
+    padding-bottom: 12px;
+}
+
+.like {
+    padding: 3.2vw 0;
+    width: 100%;
+    text-align: center;
+}
+
+.like img {
+    width: 43vw;
+}
+
+.recommendItem {
+    display: flex;
+    flex-direction: column;
+    width: 45.6vw;
+    background: #fff;
+    border-radius: 1.6vw;
+    overflow: hidden;
+    margin: 2.4vw 1.2vw 0;
+}
+
+.imgBox {
+    height: 45.6vw;
+}
+
+.imgBox img {
+    width: 45.6vw;
+    height: 45.6vw;
+}
+
+.info {
+    padding: 0 2.4vw;
+    height: 24.4vw;
+    text-decoration: none;
+}
+
+.titleBox {
+    margin-top: 3vw;
+    height: 10vw;
+    overflow: hidden;
+    line-height: 5vw;
+    text-overflow: ellipsis;
+    font-size: 3.5vw;
+    color: #333;
+}
+
+.priceBox {
+    flex-direction: row;
+    margin-top: 3vw;
+    height: 5.4vw;
+    line-height: 5vw;
+}
+
+.priceBox span {
+    margin-left: 1vw;
+}
+
+.icon {
+    color: #ff5500;
+    font-size: 1vw;
+}
+
+.price {
+    font-size: 4vw;
+    line-height: 4.2vw;
+    color: #ff5500;
+}
+
+.buyer {
+    font-size: 3vw;
+    color: #999;
+}
